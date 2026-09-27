@@ -40,13 +40,17 @@ export function createTooltip(container) {
       ? { x: pointerEvent.clientX - bounds.left, y: pointerEvent.clientY - bounds.top }
       : anchor;
     const left = Math.max(10, Math.min(point.x + 14, bounds.width - tooltip.offsetWidth - 10));
-    const top = Math.max(10, Math.min(point.y + 14, bounds.height - tooltip.offsetHeight - 10));
+    const below = point.y + 14;
+    const preferredTop = bounds.top + below + tooltip.offsetHeight > window.innerHeight - 10
+      ? point.y - tooltip.offsetHeight - 14
+      : below;
+    const top = Math.max(10, Math.min(preferredTop, bounds.height - tooltip.offsetHeight - 10));
     tooltip.style.left = `${left}px`;
     tooltip.style.top = `${top}px`;
   }
 
   function hide(force = false) {
-    if (pinned && !force) return;
+    if (pinned && force !== true) return;
     pinned = false;
     tooltip.classList.remove("is-pinned");
     tooltip.hidden = true;

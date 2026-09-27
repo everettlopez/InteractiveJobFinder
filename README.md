@@ -1,36 +1,55 @@
 # Interactive Job Finder
 
-A small, modular browser app that plots sample job postings on an interactive map of the United States. It uses D3.js for drawing and TopoJSON for state boundaries; there is no build step or package install.
+An interactive map for exploring sample job opportunities across the United States. Built as a modular, browser-based frontend with D3.js, the project combines geographic visualization with practical search and filtering controls.
+
+## Features
+
+- Explore state boundaries and job locations on a responsive U.S. map.
+- Search job titles and filter results by state and city.
+- Group postings by city; markers show the number of matching roles at each location.
+- Select a marker to keep its details open, switch the active location, or dismiss the popup.
+- Zoom and pan the map while keeping it within the U.S. map bounds.
+- Use keyboard-accessible map markers and controls.
+
+## Technology
+
+- HTML, CSS, and native JavaScript modules
+- D3.js for geographic rendering, marker joins, and map interaction
+- TopoJSON for U.S. state boundary data
+
+No build step or package installation is required.
 
 ## Run locally
 
-The app fetches its JSON data, so serve the project over HTTP instead of opening `index.html` as a `file://` URL.
+Python 3 and an internet connection are required. The app fetches its JSON data and loads D3.js, TopoJSON, and state boundaries from CDNs, so it must be served over HTTP rather than opened directly as a `file://` URL.
 
-1. Open a terminal in this project directory.
-2. Start a local static server with Python:
+```powershell
+git clone https://github.com/everettlopez/InteractiveJobFinder.git
+cd InteractiveJobFinder
+python -m http.server 8000
+```
 
-   ```powershell
-   py -m http.server 8000
-   ```
+On Windows, `py -m http.server 8000` also works if the Python launcher is installed. Open [http://localhost:8000](http://localhost:8000) in a browser. Stop the server with `Ctrl+C`.
 
-   On systems where `py` is unavailable, use `python -m http.server 8000`.
-3. Visit `http://localhost:8000` in a browser.
-4. Stop the server with `Ctrl+C`.
+## Project structure
 
-D3.js, TopoJSON, the US state-boundary data, and the optional Google Fonts are loaded from CDNs, so the map requires an internet connection.
+```text
+index.html                  Page structure and browser dependencies
+styles.css                  Responsive layout, map, and popup styles
+script.js                   Data loading, filters, and app initialization
+components/
+  state-map.js              State boundary rendering and state interactions
+  job-markers.js            City grouping, job markers, and selection behavior
+  map-zoom.js               Bounded map zoom controls
+  tooltip.js                Shared popup rendering and dismissal behavior
+data/
+  jobs.json                 Sample job listings
+```
 
-## Project layout
+## Data and API integration
 
-- `index.html` contains the page structure and loads the browser dependencies.
-- `styles.css` contains responsive layout, map, tooltip, and motion styles.
-- `script.js` loads sample jobs and coordinates the map modules.
-- `components/state-map.js` draws the states and handles state hover/focus.
-- `components/job-markers.js` plots job locations and handles job hover/focus.
-- `components/tooltip.js` renders safe, text-based tooltip content.
-- `data/jobs.json` is the sample job dataset.
+Listings are illustrative sample data, not live job openings. Each record includes an ID, title, company, coordinates, state, city, and description. `script.js` currently loads `data/jobs.json`; `fetchRealTimeJobs()` is an integration placeholder for a future jobs API. An API response can be mapped to the same record shape and passed through the existing filtering and marker flow.
 
-## Job data and API integration
+## Current scope
 
-Each job includes an `id`, `title`, `company`, `latitude`, `longitude`, `state`, `city`, and `description`. To connect a service later, replace `loadSampleJobs()` in `script.js` with an API request that returns the same array shape. `fetchRealTimeJobs()` is included as an intentionally empty integration placeholder. Pass the returned jobs to `drawJobMarkers()` to render them.
-
-State and job tooltips are keyboard-focusable as well as hoverable. State messages use the requested placeholder format, such as “Sample info for California.”
+This is a frontend-only project. It does not include a backend, user accounts, saved jobs, or a live job feed. The sample data and external map dependencies make it easy to explore locally while keeping a clear path for future API integration.
