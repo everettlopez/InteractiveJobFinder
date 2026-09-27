@@ -118,5 +118,45 @@
     "state": "Florida",
     "city": "Miami",
     "description": "Research local policy questions and translate findings into clear recommendations."
+  },
+  {
+    "id": "job-013",
+    "title": "Recruiting Coordinator",
+    "company": "Oakline Creative",
+    "latitude": 37.7749,
+    "longitude": -122.4194,
+    "state": "California",
+    "city": "San Francisco",
+    "description": "Create a thoughtful candidate experience for a growing independent design team."
+  },
+  {
+    "id": "job-014",
+    "title": "Platform Engineer",
+    "company": "Alpine Systems",
+    "latitude": 47.6062,
+    "longitude": -122.3321,
+    "state": "Washington",
+    "city": "Seattle",
+    "description": "Build dependable infrastructure for teams working on public-interest technology."
+  },
+  {
+    "id": "job-015",
+    "title": "People Operations Partner",
+    "company": "Studio Commons",
+    "latitude": 41.8781,
+    "longitude": -87.6298,
+    "state": "Illinois",
+    "city": "Chicago",
+    "description": "Help a distributed creative team grow with supportive people programs."
+  },
+  {
+    "id": "job-016",
+    "title": "Learning Program Designer",
+    "company": "Cedar Academy",
+    "latitude": 30.2672,
+    "longitude": -97.7431,
+    "state": "Texas",
+    "city": "Austin",
+    "description": "Design practical learning experiences for people making career transitions."
   }
 ]

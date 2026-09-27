@@ -106,9 +106,12 @@ h1 { margin-bottom: 7px; font-family: "Manrope", sans-serif; font-size: clamp(32
 .state:hover, .state:focus { fill: var(--map-hover); outline: none; }
 .state:focus-visible { stroke: var(--green); stroke-width: 2px; }
 .state-label { pointer-events: none; fill: #77827a; font-size: 8px; text-anchor: middle; }
-.job-marker { fill: var(--coral); stroke: #fffefa; stroke-width: 2px; vector-effect: non-scaling-stroke; cursor: pointer; transition: r 140ms ease, fill 140ms ease; }
-.job-marker:hover, .job-marker:focus { fill: #a84734; outline: none; }
-.job-marker:focus-visible { stroke: var(--ink); stroke-width: 2.5px; }
+.job-location { cursor: pointer; outline: none; }
+.job-marker { fill: var(--coral); stroke: #fffefa; stroke-width: 2px; vector-effect: non-scaling-stroke; }
+.job-marker-count { fill: #fffefa; font: 700 9px "DM Sans", "Segoe UI", sans-serif; pointer-events: none; }
+.job-location:hover .job-marker { fill: #a84734; }
+.job-location:focus-visible .job-marker { stroke: var(--ink); stroke-width: 2.5px; }
+.job-location.is-selected .job-marker { fill: var(--green); stroke: #fffefa; stroke-width: 2.5px; }
 
 .map-message { position: absolute; z-index: 2; inset: 0; display: grid; place-items: center; color: var(--muted); font-size: 14px; }
 .map-message[hidden] { display: none; }
@@ -118,10 +121,17 @@ h1 { margin-bottom: 7px; font-family: "Manrope", sans-serif; font-size: clamp(32
 .map-controls button { display: grid; width: 36px; height: 36px; place-items: center; border: 1px solid #dfe5dc; border-radius: 6px; color: var(--ink); background: #fffefa; box-shadow: 0 3px 10px rgb(28 41 37 / 12%); cursor: pointer; font: 500 21px/1 "DM Sans", "Segoe UI", sans-serif; transition: color 140ms ease, background 140ms ease, border-color 140ms ease; }
 .map-controls button:hover { border-color: #a9c4b2; color: var(--green); background: #f4f8f3; }
 .map-controls button:focus-visible { outline: 2px solid var(--green); outline-offset: 2px; }
-.map-tooltip { position: absolute; z-index: 3; width: min(260px, calc(100% - 24px)); padding: 12px 14px; border: 1px solid #e4e8df; border-radius: 7px; background: #fffefa; box-shadow: var(--shadow); pointer-events: none; animation: tooltip-in 120ms ease-out both; }
+.map-tooltip { position: absolute; z-index: 3; width: min(260px, calc(100% - 24px)); max-height: min(300px, calc(100% - 20px)); overflow: auto; padding: 12px 14px; border: 1px solid #e4e8df; border-radius: 7px; background: #fffefa; box-shadow: var(--shadow); pointer-events: none; animation: tooltip-in 120ms ease-out both; }
+.map-tooltip.is-pinned { padding-right: 38px; pointer-events: auto; }
 .tooltip-kicker { margin: 0 0 4px; color: var(--green); font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; }
 .tooltip-title { margin: 0 0 3px; font-family: "Manrope", sans-serif; font-size: 14px; font-weight: 800; }
-.tooltip-copy { margin: 0; color: var(--muted); font-size: 12px; line-height: 1.5; }
+.tooltip-copy { margin: 0; color: var(--muted); font-size: 12px; line-height: 1.5; white-space: pre-line; }
+.tooltip-action { min-height: 32px; margin-top: 12px; padding: 0 12px; border: 1px solid #dfe5dc; border-radius: 5px; color: var(--green); background: #f4f5f0; cursor: pointer; font: 600 11px "DM Sans", "Segoe UI", sans-serif; }
+.tooltip-action:hover { border-color: #a9c4b2; background: #edf4ee; }
+.tooltip-action:focus-visible { outline: 2px solid var(--green); outline-offset: 2px; }
+.tooltip-close { position: absolute; top: 5px; right: 5px; display: grid; width: 26px; height: 26px; place-items: center; border: 0; border-radius: 4px; color: var(--muted); background: transparent; cursor: pointer; font-size: 19px; line-height: 1; }
+.tooltip-close:hover { color: var(--ink); background: #edf0e9; }
+.tooltip-close:focus-visible { outline: 2px solid var(--green); outline-offset: 1px; }
 .map-footer { min-height: 42px; padding: 0 22px; display: flex; align-items: center; justify-content: space-between; gap: 12px; border-top: 1px solid #edf0e9; color: var(--muted); font-size: 11px; }
 .page-note { margin: 13px 2px 0; color: #79837d; font-size: 11px; }
 
