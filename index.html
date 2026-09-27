@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4f5f0">
+  <meta name="description" content="Explore sample job opportunities across the United States.">
+  <title>Fieldwork | Interactive Job Finder</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/topojson-client@3/dist/topojson-client.min.js" defer></script>
+  <script type="module" src="./script.js"></script>
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="./" aria-label="Fieldwork home">
+        <span class="brand-mark" aria-hidden="true">F</span>
+        <span>fieldwork<span class="brand-period">.</span></span>
+      </a>
+      <span class="topbar-note"><span class="live-dot" aria-hidden="true"></span> Sample opportunities</span>
+    </header>
+
+    <section class="intro" aria-labelledby="page-title">
+      <p class="eyebrow">THE WORK, OUT THERE</p>
+      <div class="intro-row">
+        <div>
+          <h1 id="page-title">Find your place.</h1>
+          <p class="intro-copy">Explore open roles across the United States.</p>
+        </div>
+        <div class="job-count" aria-live="polite">
+          <strong id="job-count">--</strong>
+          <span>sample roles</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="map-section" aria-label="Job opportunities map">
+      <div class="map-toolbar">
+        <div class="map-heading">
+          <span class="map-heading-icon" aria-hidden="true">+</span>
+          <h2>Opportunities by location</h2>
+        </div>
+        <div class="map-legend"><span class="legend-dot" aria-hidden="true"></span> Open role</div>
+      </div>
+      <div class="map-content">
+        <aside class="filters-panel" aria-label="Filter job opportunities">
+          <div class="filters-heading">
+            <div>
+              <p class="filter-eyebrow">REFINE</p>
+              <h3>Find a role</h3>
+            </div>
+            <button id="clear-filters" class="clear-filters" type="button" disabled>Clear</button>
+          </div>
+          <label class="filter-field" for="job-search">
+            <span>Job title</span>
+            <input id="job-search" type="search" placeholder="Search titles" autocomplete="off">
+          </label>
+          <label class="filter-field" for="state-filter">
+            <span>State</span>
+            <select id="state-filter">
+              <option value="">All states</option>
+            </select>
+          </label>
+          <label class="filter-field" for="city-filter">
+            <span>City</span>
+            <select id="city-filter">
+              <option value="">All cities</option>
+            </select>
+          </label>
+          <p id="filter-summary" class="filter-summary" role="status" aria-live="polite"></p>
+        </aside>
+        <div class="map-visual">
+          <div id="map-shell" class="map-shell">
+            <div id="map-loading" class="map-message" role="status">Loading opportunities…</div>
+            <div id="map-error" class="map-message map-error" role="alert" hidden></div>
+            <div id="map-tooltip" class="map-tooltip" role="tooltip" hidden></div>
+            <svg id="us-map" viewBox="0 0 975 610" role="img" aria-label="Map of the United States with job opportunities"></svg>
+            <div class="map-controls" role="group" aria-label="Map zoom controls">
+              <button id="zoom-in" type="button" aria-label="Zoom in" title="Zoom in">+</button>
+              <button id="zoom-out" type="button" aria-label="Zoom out" title="Zoom out">−</button>
+            </div>
+          </div>
+          <footer class="map-footer">
+            <span>50 states + Washington, D.C.</span>
+            <span>Hover a state or a dot to explore</span>
+          </footer>
+        </div>
+      </div>
+    </section>
+    <p class="page-note">Locations are illustrative sample data.</p>
+  </main>
+</body>
+</html>

@@ -1,0 +1,122 @@
+[
+  {
+    "id": "job-001",
+    "title": "Product Designer",
+    "company": "Northstar Health",
+    "latitude": 37.7749,
+    "longitude": -122.4194,
+    "state": "California",
+    "city": "San Francisco",
+    "description": "Shape clear, accessible experiences for tools that help people manage their health."
+  },
+  {
+    "id": "job-002",
+    "title": "Software Engineer",
+    "company": "Juniper Labs",
+    "latitude": 34.0522,
+    "longitude": -118.2437,
+    "state": "California",
+    "city": "Los Angeles",
+    "description": "Build reliable web services for a growing climate data platform."
+  },
+  {
+    "id": "job-003",
+    "title": "Data Analyst",
+    "company": "Common Ground",
+    "latitude": 47.6062,
+    "longitude": -122.3321,
+    "state": "Washington",
+    "city": "Seattle",
+    "description": "Turn community and product data into practical insights for partner teams."
+  },
+  {
+    "id": "job-004",
+    "title": "Operations Lead",
+    "company": "Brightpath Foods",
+    "latitude": 40.7128,
+    "longitude": -74.006,
+    "state": "New York",
+    "city": "New York",
+    "description": "Improve day-to-day operations as a mission-led food business expands."
+  },
+  {
+    "id": "job-005",
+    "title": "UX Researcher",
+    "company": "Goodwell Finance",
+    "latitude": 42.3601,
+    "longitude": -71.0589,
+    "state": "Massachusetts",
+    "city": "Boston",
+    "description": "Bring customer perspectives into the design of more inclusive financial products."
+  },
+  {
+    "id": "job-006",
+    "title": "Frontend Developer",
+    "company": "Fieldnote",
+    "latitude": 41.8781,
+    "longitude": -87.6298,
+    "state": "Illinois",
+    "city": "Chicago",
+    "description": "Create fast, thoughtful interfaces for a collaborative planning product."
+  },
+  {
+    "id": "job-007",
+    "title": "Community Manager",
+    "company": "Open Door Learning",
+    "latitude": 30.2672,
+    "longitude": -97.7431,
+    "state": "Texas",
+    "city": "Austin",
+    "description": "Grow a welcoming network of educators and lifelong learners."
+  },
+  {
+    "id": "job-008",
+    "title": "Product Manager",
+    "company": "Civic Thread",
+    "latitude": 38.9072,
+    "longitude": -77.0369,
+    "state": "District of Columbia",
+    "city": "Washington",
+    "description": "Guide digital services that make local civic information easier to use."
+  },
+  {
+    "id": "job-009",
+    "title": "Research Associate",
+    "company": "Evergreen Energy",
+    "latitude": 39.7392,
+    "longitude": -104.9903,
+    "state": "Colorado",
+    "city": "Denver",
+    "description": "Support research on practical pathways to a lower-carbon energy system."
+  },
+  {
+    "id": "job-010",
+    "title": "Customer Success Partner",
+    "company": "Lattice Works",
+    "latitude": 33.749,
+    "longitude": -84.388,
+    "state": "Georgia",
+    "city": "Atlanta",
+    "description": "Help customers get lasting value from tools that support distributed teams."
+  },
+  {
+    "id": "job-011",
+    "title": "Visual Designer",
+    "company": "Morrow Studio",
+    "latitude": 45.5152,
+    "longitude": -122.6784,
+    "state": "Oregon",
+    "city": "Portland",
+    "description": "Develop a flexible visual system for a small, independent creative studio."
+  },
+  {
+    "id": "job-012",
+    "title": "Policy Analyst",
+    "company": "Public Square",
+    "latitude": 25.7617,
+    "longitude": -80.1918,
+    "state": "Florida",
+    "city": "Miami",
+    "description": "Research local policy questions and translate findings into clear recommendations."
+  }
+]
